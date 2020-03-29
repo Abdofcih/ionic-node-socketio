@@ -14,6 +14,9 @@
  *  socket.broadcast.to(user.room).emit('serverSendMsg',msg) 
  *  io.to(user.room).emit("sendTurnResult")
  *  socket.on('disconnect')
+ 
+ 
+ ![Demo image](http://i.imgur.com/vFsIPPn.png)
 
 
 
