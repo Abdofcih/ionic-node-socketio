@@ -1,0 +1,8 @@
+{
+  "name": "kaloon",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

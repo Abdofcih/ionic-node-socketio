@@ -1,0 +1,59 @@
+
+/* Chat styles */
+
+.chat__main {
+    padding: 5px;
+    height: 90%;
+    overflow-y: scroll;
+}
+
+
+/* Message Styles */
+
+.message {
+    margin-bottom: 16px;
+    padding: 5px;  
+    border: 1px solid var(--ion-color-primary);
+    border-radius: 10px;
+}
+
+.message__name {
+    font-weight: 600;
+    font-size: 14px;
+    margin-right: 8px;
+}
+
+.message__meta {
+    color: #777;
+    font-size: 14px;
+}
+
+/* Message Composition Styles */
+
+.compose {
+    display: flex;
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+}
+
+.compose .send {
+    display: flex;
+    width: 100%;
+}
+
+.compose ion-input {
+    border: 1px solid var(--ion-color-primary);
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.compose ion-button {
+    font-size: 14px;
+}
+
+// .send{
+//     display: flex;
+// }
+
+

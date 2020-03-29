@@ -1,0 +1,54 @@
+<ion-content class="ion-padding">
+  <h1 class="ion-margin-vertical-medium">Tec Tac Toe</h1>
+  <h2>Create a game and send the key to your friend</h2>
+
+  <form #lF="ngForm" (ngSubmit)="submitLogin(lF)" >
+    <ion-item>
+      <ion-label position="floating"  color="light"> Username</ion-label>
+      <ion-input 
+            ngModel
+            name="username"
+            #username="ngModel" 
+            required type="text"
+            minlength="4"
+            ></ion-input>
+    </ion-item >
+    <ion-badge color="danger" ></ion-badge>
+    <ion-badge color="danger" *ngIf="username.touched && username.invalid">
+      <span *ngIf="username?.errors.required">  Username is required</span>
+      <span *ngIf="room?.errors.minlength">
+        Minimum letters is 
+          {{username?.errors.minlength.requiredLength}} 
+         not 
+          {{username?.errors.minlength.actualLength}}
+        </span>
+    </ion-badge>
+    <ion-item>
+      <ion-label position="floating"  color="light"> Room Key</ion-label>
+      <ion-input 
+                type="text"
+                ngModel 
+                name="room" 
+                #room="ngModel" 
+                required 
+                minlength="4"></ion-input>
+    </ion-item>
+    <ion-badge color="danger" *ngIf="room.touched && room.invalid">
+      <span *ngIf="room?.errors.required">
+       Room Key is required
+      </span>
+      <span *ngIf="room?.errors.minlength">
+      Minimum letters is 
+        {{room?.errors.minlength.requiredLength}} 
+       not 
+        {{room?.errors.minlength.actualLength}}
+      </span>
+    </ion-badge>
+    <ion-button class="ion-margin-horizontal-custom-top"
+     size="large" color="light" expand="block" 
+     [disabled]="!lF.valid" type="submit">
+     Join
+    </ion-button>
+  </form>
+
+</ion-content>

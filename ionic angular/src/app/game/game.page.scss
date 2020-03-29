@@ -1,0 +1,74 @@
+
+h2{
+    text-align: center;
+}
+h2 .vs{
+    font-size: 25px;
+    color: #dddddd;
+    margin: 5px 10px;
+}
+
+.board {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto)
+  }
+  
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 1px solid var(--ion-color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+  // if cell is filled with x or o make cursor not allowed
+.cell.x,
+.cell.circle {
+    cursor: not-allowed;
+}
+
+// make X O with before and after 
+.cell.x::before,
+.cell.x::after {
+content: '';
+    position: absolute;
+    width: calc(var(--mark-size) * .15);
+    height: var(--mark-size);
+    background-color: var(--ion-color-primary);
+}
+  
+.cell.x::before{
+    transform: rotate(45deg);
+}
+  
+.cell.x::after {
+    transform: rotate(-45deg);
+}
+
+.cell.circle::before,
+.cell.circle::after {
+content: '';
+    position: absolute;
+    border-radius: 50%;
+}
+  
+.cell.circle::before {
+    width: var(--mark-size);
+    height: var(--mark-size);
+    background-color: var(--ion-color-primary);
+}
+
+.cell.circle::after{
+    width: calc(var(--mark-size) * .7);
+    height: calc(var(--mark-size) * .7);
+    background-color: white;
+}

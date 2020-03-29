@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      <ion-button routerLink="/chat">Chat</ion-button>
+    </ion-buttons>
+    <ion-title >XO Game</ion-title>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/login" (click)="leave()">Leave</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ <div class="board" id="board" >
+   <div class="cell " 
+      data-cell
+      (click)="handleClick(i)"
+      *ngFor="let squere of BOARD; let i=index"
+      [ngClass]="{'x':BOARD[i]==='x','circle':BOARD[i]==='circle'}" ></div>
+</div>
+</ion-content>
